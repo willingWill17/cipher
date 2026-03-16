@@ -13,15 +13,15 @@ mcpServers: {}
 
 # Choose ONLY ONE of the following LLM providers
 llm:
-  provider: openai
-  model: gpt-4.1-mini
-  apiKey: $OPENAI_API_KEY
-  maxIterations: 50
-
-  # provider: gemini
-  # model: gemini-2.5-flash
-  # apiKey: $GEMINI_API_KEY
+  # provider: openai
+  # model: gpt-4.1-mini
+  # apiKey: $OPENAI_API_KEY
   # maxIterations: 50
+
+  provider: gemini
+  model: gemini-2.5-pro
+  apiKey: $GEMINI_API_KEY
+  maxIterations: 50
 
   # provider: anthropic
   # model: claude-3-5-haiku-20241022
@@ -80,10 +80,10 @@ llm:
 
 # Embedding configuration: ONLY ONE of the following
 
-embedding:
-  type: openai
-  model: text-embedding-3-small
-  apiKey: $OPENAI_API_KEY
+# embedding:
+#   type: openai
+#   model: text-embedding-3-small
+#   apiKey: $OPENAI_API_KEY
 
   # type: ollama
   # model: mxbai-embed-large
@@ -91,74 +91,10 @@ embedding:
   # dimensions: 1024
 
 # Gemini:
-# embedding:
-#   type: gemini
-#   model: gemini-embedding-001
-#   apiKey: $GEMINI_API_KEY
-
-# Ollama:
-# embedding:
-#   type: ollama
-#   model: mxbai-embed-large
-#   baseUrl: $OLLAMA_BASE_URL
-#   dimensions: 1024
-
-# LM Studio:
-# embedding:
-#   type: lmstudio
-#   model: nomic-embed-text-v1.5
-#   baseUrl: $LMSTUDIO_BASE_URL
-
-# Voyage (for Anthropic/Claude users):
-# embedding:
-#   type: voyage
-#   model: voyage-3-large     #(1024, 256, 512, 2048)
-#   apiKey: $VOYAGE_API_KEY
-#   dimensions: 1024
-
-# Qwen:
-# embedding:
-#   type: qwen
-#   model: text-embedding-v3
-#   apiKey: $QWEN_API_KEY
-#   dimensions: 1024          # (1024, 768 or 512)
-
-# AWS Bedrock:
-# embedding:
-#   type: aws-bedrock
-#   model: amazon.titan-embed-text-v2:0   # or cohere.embed-english-v3
-#   region: $AWS_REGION
-#   accessKeyId: $AWS_ACCESS_KEY_ID
-#   secretAccessKey: $AWS_SECRET_ACCESS_KEY
-#   sessionToken: $AWS_SESSION_TOKEN       # Optional, for temporary credentials
-#   dimensions: 1024                       # 1024 (default), 512, or 256 for Titan V2
-#   timeout: 30000
-#   maxRetries: 3
-
-# Azure OpenAI:
-# embedding:
-#   type: openai
-#   model: text-embedding-3-small
-#   apiKey: $AZURE_OPENAI_API_KEY
-#   baseUrl: $AZURE_OPENAI_ENDPOINT        # e.g., https://your-resource.openai.azure.com
-#   dimensions: 1536                       # Optional: depends on model
-#   timeout: 30000
-#   maxRetries: 3
-
-# Disable embeddings entirely:
-# embedding:
-#   disabled: true
-
-
-
-# Evaluation LLM configuration (non-thinking model for evaluation step)
-# evalLlm:
-#   provider: anthropic
-#   model: claude-3-7-sonnet-20250219
-#   apiKey: $ANTHROPIC_API_KEY
-
-# System prompt - User customizable
-# This prompt will be combined with built-in tool usage instructions
+embedding:
+  type: gemini
+  model: gemini-embedding-001
+  apiKey: $GEMINI_API_KEY
 
 systemPrompt:
   enabled: true
