@@ -1,0 +1,25 @@
+{
+  "name": "cipher",
+  "version": "0.3.0",
+  "description": "Memory-powered AI agent framework with real-time WebSocket communication, MCP integration, and composable patterns",
+  "mcpServers": {
+    "cipher": {
+      "command": "node",
+      "args": [
+        "${extensionPath}/dist/src/app/index.cjs",
+        "--mode",
+        "mcp"
+      ],
+      "env": {}
+    }
+  },
+  "contextFileName": "GEMINI.md",
+  "settings": [
+    {
+      "name": "API Key",
+      "description": "Your Gemini API key. Get one from https://aistudio.google.com/apikey.",
+      "envVar": "GEMINI_API_KEY",
+      "sensitive": true
+    }
+  ]
+}
